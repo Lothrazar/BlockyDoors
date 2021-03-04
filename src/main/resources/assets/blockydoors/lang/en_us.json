@@ -1,1 +1,5 @@
-{ }
+{ 
+	"blockydoors.door_stone":"Stone Door",
+	
+	"itemGroup.blockydoors":"Blocky Doors"
+}
