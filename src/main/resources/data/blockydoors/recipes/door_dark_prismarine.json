@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ##",
+    " -#",
+    " ##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dark_prismarine"
+    },
+    "-": {
+      "tag": "minecraft:wooden_doors"
+    }
+  },
+  "result": {
+    "item": "blockydoors:door_dark_prismarine",
+    "count": 2
+  }
+}

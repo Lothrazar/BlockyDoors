@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ##",
+    " -#",
+    " ##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:purpur_block"
+    },
+    "-": {
+      "tag": "minecraft:wooden_doors"
+    }
+  },
+  "result": {
+    "item": "blockydoors:door_purpur",
+    "count": 2
+  }
+}

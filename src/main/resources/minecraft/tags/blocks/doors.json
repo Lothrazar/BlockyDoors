@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "blockydoors:door_andesite",
+    "blockydoors:door_blackstone",
+    "blockydoors:door_bricks",
+    "blockydoors:door_brown_mushroom",
+    "blockydoors:door_cobblestone",
+    "blockydoors:door_diorite",
+    "blockydoors:door_end_stone",
+    "blockydoors:door_granite",
+    "blockydoors:door_mossy_cobblestone",
+    "blockydoors:door_nether_bricks",
+    "blockydoors:door_netherrack",
+    "blockydoors:door_prismarine",
+    "blockydoors:door_purpur",
+    "blockydoors:door_quartz",
+    "blockydoors:door_red_mushroom",
+    "blockydoors:door_red_sandstone",
+    "blockydoors:door_sandstone",
+    "blockydoors:door_smooth_stone",
+    "blockydoors:door_stone_bricks",
+    "blockydoors:door_stone_bricks",
+    "blockydoors:door_stone"
+  ]
+}

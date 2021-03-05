@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "top": "minecraft:block/dark_prismarine",
+    "bottom": "minecraft:block/dark_prismarine"
+  }
+}
