@@ -1,6 +1,13 @@
 {
   "replace": false,
   "values": [
+    "blockydoors:door_obsidian",
+    "blockydoors:door_mossy_stone_bricks",
+    "blockydoors:door_cracked_stone_bricks",
+    "blockydoors:door_prismarine_bricks",
+    "blockydoors:door_red_nether_bricks",
+    "blockydoors:door_dark_prismarine",
+    "blockydoors:door_polished_blackstone_bricks",
     "blockydoors:door_andesite",
     "blockydoors:door_blackstone",
     "blockydoors:door_bricks",
