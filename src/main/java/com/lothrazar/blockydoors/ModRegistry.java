@@ -1,13 +1,13 @@
 package com.lothrazar.blockydoors;
 
-import net.minecraft.block.AbstractBlock.Properties;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,10 +17,10 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModRegistry {
 
-  private static ItemGroup TAB = new ItemGroup(ModMain.MODID) {
+  private static CreativeModeTab TAB = new CreativeModeTab(ModMain.MODID) {
 
     @Override
-    public ItemStack createIcon() {
+    public ItemStack makeIcon() {
       return new ItemStack(DOOR_STONE);
     }
   };
@@ -84,34 +84,34 @@ public class ModRegistry {
   @SubscribeEvent
   public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
     IForgeRegistry<Block> r = event.getRegistry();
-    r.register(createDoor("door_stone", Blocks.STONE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_smooth_stone", Blocks.STONE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_cobblestone", Blocks.COBBLESTONE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_mossy_cobblestone", Blocks.MOSSY_COBBLESTONE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_stone_bricks", Blocks.STONE_BRICKS, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_blackstone", Blocks.BLACKSTONE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_polished_blackstone_bricks", Blocks.POLISHED_BLACKSTONE_BRICKS, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_granite", Blocks.GRANITE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_andesite", Blocks.ANDESITE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_diorite", Blocks.DIORITE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_bricks", Blocks.BRICKS, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_prismarine", Blocks.PRISMARINE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_prismarine_bricks", Blocks.PRISMARINE_BRICKS, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_dark_prismarine", Blocks.DARK_PRISMARINE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_netherrack", Blocks.NETHERRACK, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_nether_bricks", Blocks.NETHER_BRICKS, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_red_nether_bricks", Blocks.RED_NETHER_BRICKS, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_purpur", Blocks.PURPUR_BLOCK, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_sandstone", Blocks.SANDSTONE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_red_sandstone", Blocks.RED_SANDSTONE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_quartz", Blocks.QUARTZ_BLOCK, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_red_mushroom", Blocks.RED_MUSHROOM_BLOCK, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_brown_mushroom", Blocks.BROWN_MUSHROOM_BLOCK, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_end_stone", Blocks.END_STONE, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_end_stone_bricks", Blocks.END_STONE_BRICKS, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_obsidian", Blocks.OBSIDIAN, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_mossy_stone_bricks", Blocks.MOSSY_STONE_BRICKS, Properties.create(Material.ROCK)));
-    r.register(createDoor("door_cracked_stone_bricks", Blocks.CRACKED_STONE_BRICKS, Properties.create(Material.ROCK)));
+    r.register(createDoor("door_stone", Blocks.STONE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_smooth_stone", Blocks.STONE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_cobblestone", Blocks.COBBLESTONE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_mossy_cobblestone", Blocks.MOSSY_COBBLESTONE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_stone_bricks", Blocks.STONE_BRICKS, Properties.of(Material.STONE)));
+    r.register(createDoor("door_blackstone", Blocks.BLACKSTONE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_polished_blackstone_bricks", Blocks.POLISHED_BLACKSTONE_BRICKS, Properties.of(Material.STONE)));
+    r.register(createDoor("door_granite", Blocks.GRANITE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_andesite", Blocks.ANDESITE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_diorite", Blocks.DIORITE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_bricks", Blocks.BRICKS, Properties.of(Material.STONE)));
+    r.register(createDoor("door_prismarine", Blocks.PRISMARINE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_prismarine_bricks", Blocks.PRISMARINE_BRICKS, Properties.of(Material.STONE)));
+    r.register(createDoor("door_dark_prismarine", Blocks.DARK_PRISMARINE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_netherrack", Blocks.NETHERRACK, Properties.of(Material.STONE)));
+    r.register(createDoor("door_nether_bricks", Blocks.NETHER_BRICKS, Properties.of(Material.STONE)));
+    r.register(createDoor("door_red_nether_bricks", Blocks.RED_NETHER_BRICKS, Properties.of(Material.STONE)));
+    r.register(createDoor("door_purpur", Blocks.PURPUR_BLOCK, Properties.of(Material.STONE)));
+    r.register(createDoor("door_sandstone", Blocks.SANDSTONE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_red_sandstone", Blocks.RED_SANDSTONE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_quartz", Blocks.QUARTZ_BLOCK, Properties.of(Material.STONE)));
+    r.register(createDoor("door_red_mushroom", Blocks.RED_MUSHROOM_BLOCK, Properties.of(Material.STONE)));
+    r.register(createDoor("door_brown_mushroom", Blocks.BROWN_MUSHROOM_BLOCK, Properties.of(Material.STONE)));
+    r.register(createDoor("door_end_stone", Blocks.END_STONE, Properties.of(Material.STONE)));
+    r.register(createDoor("door_end_stone_bricks", Blocks.END_STONE_BRICKS, Properties.of(Material.STONE)));
+    r.register(createDoor("door_obsidian", Blocks.OBSIDIAN, Properties.of(Material.STONE)));
+    r.register(createDoor("door_mossy_stone_bricks", Blocks.MOSSY_STONE_BRICKS, Properties.of(Material.STONE)));
+    r.register(createDoor("door_cracked_stone_bricks", Blocks.CRACKED_STONE_BRICKS, Properties.of(Material.STONE)));
   }
 
   @SubscribeEvent
@@ -148,7 +148,7 @@ public class ModRegistry {
   }
 
   private static Item createItem(BlockyDoor door) {
-    return new BlockItem(door, new Item.Properties().group(TAB)).setRegistryName(door.rawName());
+    return new BlockItem(door, new Item.Properties().tab(TAB)).setRegistryName(door.rawName());
   }
 
   public static BlockyDoor createDoor(String name, Block block, Block.Properties p) {
@@ -159,12 +159,12 @@ public class ModRegistry {
   @SuppressWarnings("deprecation")
   private static Block.Properties wrap(Block.Properties propIn, Block blockIn) {
     if (blockIn.properties != null
-        && blockIn.properties.blockColors != null) {
-      propIn.blockColors = (state) -> {
-        return blockIn.properties.blockColors.apply(blockIn.getDefaultState());
+        && blockIn.properties.materialColor != null) {
+      propIn.materialColor = (state) -> {
+        return blockIn.properties.materialColor.apply(blockIn.defaultBlockState());
       };
     }
-    return propIn.sound(blockIn.getSoundType(blockIn.getDefaultState()))
-        .hardnessAndResistance(blockIn.getDefaultState().hardness);
+    return propIn.sound(blockIn.getSoundType(blockIn.defaultBlockState()))
+        .strength(blockIn.defaultBlockState().destroySpeed);
   }
 }

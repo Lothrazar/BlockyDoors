@@ -14,7 +14,6 @@ public class ModMain {
   public static final Logger LOGGER = LogManager.getLogger();
 
   public ModMain() {
-    //    ConfigManager.setup();
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
   }

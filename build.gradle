@@ -1,12 +1,11 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-    //    maven { url = 'https://dist.creeper.host/Sponge/maven' }
+        maven { url = 'https://maven.minecraftforge.net' } 
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     //    classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
@@ -15,9 +14,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'checkstyle'
-// apply plugin: 'org.spongepowered.mixin'
+apply from: 'https://raw.githubusercontent.com/SizableShrimp/Forge-Class-Remapper/main/classremapper.gradle' 
 
-import net.minecraftforge.gradle.common.task.SignJar
+import net.minecraftforge.gradle.common.tasks.SignJar
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
@@ -25,7 +24,7 @@ version = "${mc_version}-${mod_version}"
 group = 'com.lothrazar.blockydoors' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'blockydoors'
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
 checkstyle {
     toolVersion '8.23'
@@ -36,14 +35,8 @@ checkstyleMain {
 }
 
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    
-    mappings channel: 'snapshot', version: mappings_version
- 
+mappings channel: 'official', version: '1.17.1'
+
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
@@ -105,11 +98,6 @@ minecraft {
     }
 }
 
-// mixin {
-//       add sourceSets.main, "lothrazarblockydoors.refmap.json"
-//
-//       disableTargetValidator = false
-// }
 
 dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
@@ -117,15 +105,15 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
  
-    compile fg.deobf("mezz.jei:${jei_version}")
-    compile fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+   // implementation fg.deobf("mezz.jei:${jei_version}")
+//    implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
  //   compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
  //   runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
 
-    implementation fg.deobf("curse.maven:simple-storage-network-268495:3163007")
-    implementation fg.deobf("curse.maven:cyclic-239286:3188762")
-    implementation fg.deobf("curse.maven:storage-drawers-223852:3180569")
+  //  implementation fg.deobf("curse.maven:simple-storage-network-268495:3163007")
+  //  implementation fg.deobf("curse.maven:cyclic-239286:3188762")
+  //  implementation fg.deobf("curse.maven:storage-drawers-223852:3180569")
     
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
