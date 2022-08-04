@@ -1,23 +1,11 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' } 
-        jcenter()
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-    }
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+'
 }
-apply plugin: 'net.minecraftforge.gradle'
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-apply plugin: 'checkstyle'
-apply from: 'https://raw.githubusercontent.com/SizableShrimp/Forge-Class-Remapper/main/classremapper.gradle' 
+
 
 import net.minecraftforge.gradle.common.tasks.SignJar
-import groovy.json.JsonSlurper
-import groovy.json.JsonOutput
 
 version = "${mc_version}-${mod_version}"
 group = 'com.lothrazar.blockydoors' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -25,16 +13,8 @@ archivesBaseName = 'blockydoors'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-checkstyle {
-    toolVersion '8.23'
-    config project.resources.text.fromUri("https://raw.githubusercontent.com/Lothrazar/Cyclic/trunk/1.16/checkstyle.xml")
-}
-checkstyleMain {
-    source ='src/main/java'
-}
-
 minecraft {
-mappings channel: 'official', version: '1.18'
+	mappings channel: 'official', version: '1.19'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -114,11 +94,6 @@ repositories {
     url = 'https://dogforce-games.com/maven'
   }
   maven {
-    // location of a maven mirror for JEI files, as a fallback
-    name = "ModMaven"
-    url = 'https://modmaven.k-4u.nl'
-  }
-  maven {
   	name = "curios"
     url = 'https://maven.theillusivec4.top/'
   }
@@ -183,5 +158,3 @@ task cleanJar {
   delete 'build/libs'
 }
 
-build.dependsOn signJar
-build.finalizedBy copyJar
