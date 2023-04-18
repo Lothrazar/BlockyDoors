@@ -1,5 +1,5 @@
 {
-  "parent": "blockydoors:block/door_andesite_top",
+  "parent": "blockydoors:block/door_andesite",
     "gui_light": "front",
     "display": {
         "gui": {
