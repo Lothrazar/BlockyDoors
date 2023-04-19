@@ -1,5 +1,5 @@
 {
-  "parent": "blockydoors:block/door_diorite_top",
+  "parent": "blockydoors:block/door_diorite_bottom_left",
     "gui_light": "front",
     "display": {
         "gui": {

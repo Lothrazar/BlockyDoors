@@ -1,5 +1,5 @@
 {
-  "parent": "blockydoors:block/door_blackstone",
+  "parent": "blockydoors:block/door_blackstone_top_left",
     "gui_light": "front",
     "display": {
         "gui": {

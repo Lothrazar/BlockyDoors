@@ -2,14 +2,19 @@ package com.lothrazar.blockydoors;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.lothrazar.library.util.BlockUtil;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegisterEvent;
@@ -17,41 +22,7 @@ import net.minecraftforge.registries.RegisterEvent;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModRegistry {
 
-  //  private static CreativeModeTab TAB = new CreativeModeTab(ModMain.MODID) {
-  //
-  //    @Override
-  //    public ItemStack makeIcon() {
-  //      return new ItemStack(DOOR_STONE);
-  //    }
-  //  };
   public static BlockyDoor DOOR_STONE;
-  public static BlockyDoor DOOR_COBBLESTONE;
-  public static BlockyDoor DOOR_MOSSY_COBBLESTONE;
-  public static BlockyDoor DOOR_STONE_BRICKS;
-  public static BlockyDoor DOOR_BLACKSTONE;
-  public static BlockyDoor DOOR_GRANITE;
-  public static BlockyDoor DOOR_ANDESITE;
-  public static BlockyDoor DOOR_DIORITE;
-  public static BlockyDoor DOOR_BRICKS;
-  public static BlockyDoor DOOR_PRISMARINE;
-  public static BlockyDoor DOOR_NETHER_BRICKS;
-  public static BlockyDoor DOOR_PURPUR;
-  public static BlockyDoor DOOR_SANDSTONE;
-  public static BlockyDoor DOOR_RED_SANDSTONE;
-  public static BlockyDoor DOOR_QUARTZ;
-  public static BlockyDoor DOOR_RED_MUSHROOM;
-  public static BlockyDoor DOOR_BROWN_MUSHROOM;
-  public static BlockyDoor DOOR_SMOOTH_STONE;
-  public static BlockyDoor DOOR_NETHERRACK;
-  public static BlockyDoor DOOR_END_STONE;
-  public static BlockyDoor DOOR_OBSIDIAN;
-  public static BlockyDoor DOOR_MOSSY_STONE_BRICKS;
-  public static BlockyDoor DOOR_CRACKED_STONE_BRICKS;
-  public static BlockyDoor DOOR_END_STONE_BRICKS;
-  public static BlockyDoor DOOR_POLISHED_BLACKSTONE_BRICKS;
-  public static BlockyDoor DOOR_RED_NETHER_BRICKS;
-  public static BlockyDoor DOOR_PRISMARINE_BRICKS;
-  public static BlockyDoor DOOR_DARK_PRISMARINE;
 
   @SubscribeEvent
   public static void onBlocksRegistry(RegisterEvent event) {
@@ -93,6 +64,18 @@ public class ModRegistry {
     });
   }
 
+  @SubscribeEvent
+  public static void buildContents(CreativeModeTabEvent.Register event) {
+    event.registerCreativeModeTab(new ResourceLocation(ModMain.MODID, "tab"), builder -> builder
+        .title(Component.translatable("itemGroup." + ModMain.MODID))
+        .icon(() -> new ItemStack(DOOR_STONE))
+        .displayItems((enabledFlags, populator) -> {
+          for (Block b : BLOCKLIST) {
+            populator.accept(new ItemStack(b));
+          }
+        }));
+  }
+
   private static final String HAX = "block." + ModMain.MODID + ".";
 
   private static Item createItem(BlockyDoor door) {
@@ -102,20 +85,8 @@ public class ModRegistry {
   private static final List<BlockyDoor> BLOCKLIST = new ArrayList<>();
 
   public static BlockyDoor createDoor(BlockSetType type, Block block, Block.Properties p) {
-    BlockyDoor b = new BlockyDoor(wrap(p, block), type);
+    BlockyDoor b = new BlockyDoor(BlockUtil.wrap(p, block), type);
     BLOCKLIST.add(b);
     return b;
-  }
-
-  @SuppressWarnings("deprecation")
-  private static Block.Properties wrap(Block.Properties propIn, Block blockIn) {
-    if (blockIn.properties != null
-        && blockIn.properties.materialColor != null) {
-      propIn.materialColor = (state) -> {
-        return blockIn.properties.materialColor.apply(blockIn.defaultBlockState());
-      };
-    }
-    return propIn.sound(blockIn.getSoundType(blockIn.defaultBlockState()))
-        .strength(blockIn.defaultBlockState().destroySpeed);
   }
 }

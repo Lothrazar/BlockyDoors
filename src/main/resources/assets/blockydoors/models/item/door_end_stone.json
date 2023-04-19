@@ -1,5 +1,5 @@
 {
-  "parent": "blockydoors:block/door_end_stone_top",
+  "parent": "blockydoors:block/door_end_stone_top_left",
     "gui_light": "front",
     "display": {
         "gui": {

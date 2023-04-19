@@ -1,5 +1,5 @@
-{
-  "parent": "blockydoors:block/door_cracked_stone_bricks_top",
+1{
+  "parent": "blockydoors:block/door_cracked_stone_bricks_top_left",
     "gui_light": "front",
     "display": {
         "gui": {
