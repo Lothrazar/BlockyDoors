@@ -1,10 +1,5 @@
 
-
-A Template for Minecraft Forge mods [https://files.minecraftforge.net/](https://files.minecraftforge.net)
-
-
-Use the GitHub template button, or even better the copyTemplate.sh script
-
+https://www.curseforge.com/minecraft/mc-mods/blocky-doors
 
 [![](http://cf.way2muchnoise.eu/453072.svg)](https://www.curseforge.com/minecraft/mc-mods/blocky-doors) 
 [![](http://cf.way2muchnoise.eu/versions/453072.svg)](https://www.curseforge.com/minecraft/mc-mods/blocky-doors)
