@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ##",
+    " -#",
+    " ##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:mud_bricks"
+    },
+    "-": {
+      "tag": "minecraft:wooden_doors"
+    }
+  },
+  "result": {
+    "item": "blockydoors:door_mud_bricks",
+    "count": 2
+  }
+}

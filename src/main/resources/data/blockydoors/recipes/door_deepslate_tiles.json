@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ##",
+    " -#",
+    " ##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:deepslate_tiles"
+    },
+    "-": {
+      "tag": "minecraft:wooden_doors"
+    }
+  },
+  "result": {
+    "item": "blockydoors:door_deepslate_tiles",
+    "count": 2
+  }
+}

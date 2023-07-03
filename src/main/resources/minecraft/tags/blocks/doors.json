@@ -1,6 +1,16 @@
 {
   "replace": false,
   "values": [
+  "blockydoors:door_mud_bricks",
+  
+  "blockydoors:door_deepslate",
+  "blockydoors:door_basalt",
+  
+  "blockydoors:door_deepslate_tiles",
+  "blockydoors:door_deepslate_bricks",
+  
+  
+  
     "blockydoors:door_obsidian",
     "blockydoors:door_mossy_stone_bricks",
     "blockydoors:door_cracked_stone_bricks",

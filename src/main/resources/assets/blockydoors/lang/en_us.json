@@ -19,6 +19,17 @@
 	"block.blockydoors.door_red_mushroom":"Red Mushroom Door",
 	"block.blockydoors.door_brown_mushroom":"Brown Mushroom Door",
 	"block.blockydoors.door_end_stone":"Endstone Door",
+
+  "block.blockydoors.door_mud_bricks":"Mud Bricks Door",
+	
+  "block.blockydoors.door_deepslate_tiles":"Deeplsate Tile Door",
+	
+  "block.blockydoors.door_deepslate_bricks":"Deepslate Brick Door",
+	
+	
+  "block.blockydoors.door_basalt":"Basalt Door",
+	
+  "block.blockydoors.door_deepslate":"Deepslate Door",
 	
 	"block.blockydoors.door_obsidian":"Obsidian Door",
 	"block.blockydoors.door_mossy_stone_bricks":"Mossy Stone Brick Door",

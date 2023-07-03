@@ -56,6 +56,11 @@ public class ModRegistry {
       r.register("door_obsidian", createDoor(BlockSetType.ACACIA, Blocks.OBSIDIAN, Properties.of()));
       r.register("door_mossy_stone_bricks", createDoor(BlockSetType.ACACIA, Blocks.MOSSY_STONE_BRICKS, Properties.of()));
       r.register("door_cracked_stone_bricks", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
+      r.register("door_mud_bricks", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
+      r.register("door_basalt", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
+      r.register("door_deepslate", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
+      r.register("door_deepslate_bricks", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
+      r.register("door_deepslate_tiles", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
     });
     event.register(Registries.ITEM, r -> {
       for (BlockyDoor b : BLOCKLIST) {
