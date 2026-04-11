@@ -15,11 +15,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.RegisterEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.registries.RegisterEvent;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = ModMain.MODID)//, bus = EventBusSubscriber.Bus.MOD !!
 public class ModRegistry {
 
   public static BlockyDoor DOOR_STONE;
@@ -28,49 +28,49 @@ public class ModRegistry {
   public static void onBlocksRegistry(RegisterEvent event) {
     event.register(Registries.BLOCK, r -> {
       DOOR_STONE = createDoor(BlockSetType.STONE, Blocks.STONE, Properties.of());
-      r.register("door_stone", DOOR_STONE);
-      r.register("door_smooth_stone", createDoor(BlockSetType.ACACIA, Blocks.STONE, Properties.of()));
-      r.register("door_cobblestone", createDoor(BlockSetType.ACACIA, Blocks.COBBLESTONE, Properties.of()));
-      r.register("door_mossy_cobblestone", createDoor(BlockSetType.ACACIA, Blocks.MOSSY_COBBLESTONE, Properties.of()));
-      r.register("door_stone_bricks", createDoor(BlockSetType.ACACIA, Blocks.STONE_BRICKS, Properties.of()));
-      r.register("door_blackstone", createDoor(BlockSetType.ACACIA, Blocks.BLACKSTONE, Properties.of()));
-      r.register("door_polished_blackstone_bricks", createDoor(BlockSetType.ACACIA, Blocks.POLISHED_BLACKSTONE_BRICKS, Properties.of()));
-      r.register("door_granite", createDoor(BlockSetType.ACACIA, Blocks.GRANITE, Properties.of()));
-      r.register("door_andesite", createDoor(BlockSetType.ACACIA, Blocks.ANDESITE, Properties.of()));
-      r.register("door_diorite", createDoor(BlockSetType.ACACIA, Blocks.DIORITE, Properties.of()));
-      r.register("door_bricks", createDoor(BlockSetType.ACACIA, Blocks.BRICKS, Properties.of()));
-      r.register("door_prismarine", createDoor(BlockSetType.ACACIA, Blocks.PRISMARINE, Properties.of()));
-      r.register("door_prismarine_bricks", createDoor(BlockSetType.ACACIA, Blocks.PRISMARINE_BRICKS, Properties.of()));
-      r.register("door_dark_prismarine", createDoor(BlockSetType.ACACIA, Blocks.DARK_PRISMARINE, Properties.of()));
-      r.register("door_netherrack", createDoor(BlockSetType.ACACIA, Blocks.NETHERRACK, Properties.of()));
-      r.register("door_nether_bricks", createDoor(BlockSetType.ACACIA, Blocks.NETHER_BRICKS, Properties.of()));
-      r.register("door_red_nether_bricks", createDoor(BlockSetType.ACACIA, Blocks.RED_NETHER_BRICKS, Properties.of()));
-      r.register("door_purpur", createDoor(BlockSetType.ACACIA, Blocks.PURPUR_BLOCK, Properties.of()));
-      r.register("door_sandstone", createDoor(BlockSetType.ACACIA, Blocks.SANDSTONE, Properties.of()));
-      r.register("door_red_sandstone", createDoor(BlockSetType.ACACIA, Blocks.RED_SANDSTONE, Properties.of()));
-      r.register("door_quartz", createDoor(BlockSetType.ACACIA, Blocks.QUARTZ_BLOCK, Properties.of()));
-      r.register("door_red_mushroom", createDoor(BlockSetType.ACACIA, Blocks.RED_MUSHROOM_BLOCK, Properties.of()));
-      r.register("door_brown_mushroom", createDoor(BlockSetType.ACACIA, Blocks.BROWN_MUSHROOM_BLOCK, Properties.of()));
-      r.register("door_end_stone", createDoor(BlockSetType.ACACIA, Blocks.END_STONE, Properties.of()));
-      r.register("door_end_stone_bricks", createDoor(BlockSetType.ACACIA, Blocks.END_STONE_BRICKS, Properties.of()));
-      r.register("door_obsidian", createDoor(BlockSetType.ACACIA, Blocks.OBSIDIAN, Properties.of()));
-      r.register("door_mossy_stone_bricks", createDoor(BlockSetType.ACACIA, Blocks.MOSSY_STONE_BRICKS, Properties.of()));
-      r.register("door_cracked_stone_bricks", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
-      r.register("door_mud_bricks", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
-      r.register("door_basalt", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
-      r.register("door_deepslate", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
-      r.register("door_deepslate_bricks", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
-      r.register("door_deepslate_tiles", createDoor(BlockSetType.ACACIA, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
+      r.register(rl("door_stone"), DOOR_STONE);
+      r.register(rl("door_smooth_stone"), createDoor(BlockSetType.STONE, Blocks.STONE, Properties.of()));
+      r.register(rl("door_cobblestone"), createDoor(BlockSetType.STONE, Blocks.COBBLESTONE, Properties.of()));
+      r.register(rl("door_mossy_cobblestone"), createDoor(BlockSetType.STONE, Blocks.MOSSY_COBBLESTONE, Properties.of()));
+      r.register(rl("door_stone_bricks"), createDoor(BlockSetType.STONE, Blocks.STONE_BRICKS, Properties.of()));
+      r.register(rl("door_blackstone"), createDoor(BlockSetType.STONE, Blocks.BLACKSTONE, Properties.of()));
+      r.register(rl("door_polished_blackstone_bricks"), createDoor(BlockSetType.STONE, Blocks.POLISHED_BLACKSTONE_BRICKS, Properties.of()));
+      r.register(rl("door_granite"), createDoor(BlockSetType.STONE, Blocks.GRANITE, Properties.of()));
+      r.register(rl("door_andesite"), createDoor(BlockSetType.STONE, Blocks.ANDESITE, Properties.of()));
+      r.register(rl("door_diorite"), createDoor(BlockSetType.STONE, Blocks.DIORITE, Properties.of()));
+      r.register(rl("door_bricks"), createDoor(BlockSetType.STONE, Blocks.BRICKS, Properties.of()));
+      r.register(rl("door_prismarine"), createDoor(BlockSetType.STONE, Blocks.PRISMARINE, Properties.of()));
+      r.register(rl("door_prismarine_bricks"), createDoor(BlockSetType.STONE, Blocks.PRISMARINE_BRICKS, Properties.of()));
+      r.register(rl("door_dark_prismarine"), createDoor(BlockSetType.STONE, Blocks.DARK_PRISMARINE, Properties.of()));
+      r.register(rl("door_netherrack"), createDoor(BlockSetType.STONE, Blocks.NETHERRACK, Properties.of()));
+      r.register(rl("door_nether_bricks"), createDoor(BlockSetType.STONE, Blocks.NETHER_BRICKS, Properties.of()));
+      r.register(rl("door_red_nether_bricks"), createDoor(BlockSetType.STONE, Blocks.RED_NETHER_BRICKS, Properties.of()));
+      r.register(rl("door_purpur"), createDoor(BlockSetType.STONE, Blocks.PURPUR_BLOCK, Properties.of()));
+      r.register(rl("door_sandstone"), createDoor(BlockSetType.STONE, Blocks.SANDSTONE, Properties.of()));
+      r.register(rl("door_red_sandstone"), createDoor(BlockSetType.STONE, Blocks.RED_SANDSTONE, Properties.of()));
+      r.register(rl("door_quartz"), createDoor(BlockSetType.STONE, Blocks.QUARTZ_BLOCK, Properties.of()));
+      r.register(rl("door_red_mushroom"), createDoor(BlockSetType.STONE, Blocks.RED_MUSHROOM_BLOCK, Properties.of()));
+      r.register(rl("door_brown_mushroom"), createDoor(BlockSetType.STONE, Blocks.BROWN_MUSHROOM_BLOCK, Properties.of()));
+      r.register(rl("door_end_stone"), createDoor(BlockSetType.STONE, Blocks.END_STONE, Properties.of()));
+      r.register(rl("door_end_stone_bricks"), createDoor(BlockSetType.STONE, Blocks.END_STONE_BRICKS, Properties.of()));
+      r.register(rl("door_obsidian"), createDoor(BlockSetType.STONE, Blocks.OBSIDIAN, Properties.of()));
+      r.register(rl("door_mossy_stone_bricks"), createDoor(BlockSetType.STONE, Blocks.MOSSY_STONE_BRICKS, Properties.of()));
+      r.register(rl("door_cracked_stone_bricks"), createDoor(BlockSetType.STONE, Blocks.CRACKED_STONE_BRICKS, Properties.of()));
+      r.register(rl("door_mud_bricks"), createDoor(BlockSetType.STONE, Blocks.MUD_BRICKS, Properties.of()));
+      r.register(rl("door_basalt"), createDoor(BlockSetType.STONE, Blocks.BASALT, Properties.of()));
+      r.register(rl("door_deepslate"), createDoor(BlockSetType.STONE, Blocks.DEEPSLATE, Properties.of()));
+      r.register(rl("door_deepslate_bricks"), createDoor(BlockSetType.STONE, Blocks.DEEPSLATE_BRICKS, Properties.of()));
+      r.register(rl("door_deepslate_tiles"), createDoor(BlockSetType.STONE, Blocks.DEEPSLATE_TILES, Properties.of()));
     });
     event.register(Registries.ITEM, r -> {
       for (BlockyDoor b : BLOCKLIST) {
         String id = b.getDescriptionId().replace(HAX, "");
-        r.register(id, createItem(b));
+        r.register(rl(id), createItem(b));
       }
     });
   }
 
-  private static final ResourceKey<CreativeModeTab> TAB = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(ModMain.MODID, "tab"));
+  private static final ResourceKey<CreativeModeTab> TAB = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(ModMain.MODID, "tab"));
 
   @SubscribeEvent
   public static void onCreativeModeTabRegister(RegisterEvent event) {
@@ -105,5 +105,9 @@ public class ModRegistry {
     BlockyDoor b = new BlockyDoor(BlockUtil.wrap(p, block), type);
     BLOCKLIST.add(b);
     return b;
+  }
+
+  private static ResourceLocation rl(String name) {
+    return ResourceLocation.fromNamespaceAndPath(ModMain.MODID, name);
   }
 }
