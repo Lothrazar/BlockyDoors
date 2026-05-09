@@ -2,7 +2,7 @@ package com.lothrazar.blockydoors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.fml.common.Mod;
 
 @Mod(ModMain.MODID)
 public class ModMain {

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:polished_blackstone_bricks"
+  },
+  "result": {
+    "id": "blockydoors:door_polished_blackstone_bricks",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:basalt"
+  },
+  "result": {
+    "id": "blockydoors:door_basalt",
+    "count": 1
+  }
+}

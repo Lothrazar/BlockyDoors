@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:deepslate_tiles"
+  },
+  "result": {
+    "id": "blockydoors:door_deepslate_tiles",
+    "count": 1
+  }
+}
