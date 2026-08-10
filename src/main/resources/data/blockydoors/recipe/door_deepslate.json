@@ -6,12 +6,8 @@
     " ##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:deepslate"
-    },
-    "-": {
-      "tag": "minecraft:wooden_doors"
-    }
+    "#": "minecraft:deepslate",
+    "-": "#minecraft:wooden_doors"
   },
   "result": {
     "id": "blockydoors:door_deepslate",

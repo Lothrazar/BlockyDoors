@@ -6,12 +6,8 @@
     " ##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:mossy_cobblestone"
-    },
-    "-": {
-      "tag": "minecraft:wooden_doors"
-    }
+    "#": "minecraft:mossy_cobblestone",
+    "-": "#minecraft:wooden_doors"
   },
   "result": {
     "id": "blockydoors:door_mossy_cobblestone",

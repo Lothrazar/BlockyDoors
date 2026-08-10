@@ -65,7 +65,8 @@ public class ModRegistry {
     event.register(Registries.ITEM, r -> {
       for (BlockyDoor b : BLOCKLIST) {
         String id = b.getDescriptionId().replace(HAX, "");
-        r.register(rl(id), createItem(b));
+        Identifier itemId = rl(id);
+        r.register(itemId, createItem(b, itemId));
       }
     });
   }
@@ -95,8 +96,8 @@ public class ModRegistry {
 
   private static final String HAX = "block." + ModMain.MODID + ".";
 
-  private static Item createItem(BlockyDoor door) {
-    return new BlockItem(door, new Item.Properties().useBlockDescriptionPrefix());
+  private static Item createItem(BlockyDoor door, Identifier id) {
+    return new BlockItem(door, new Item.Properties().setId(ResourceKey.create(Registries.ITEM, id)).useBlockDescriptionPrefix());
   }
 
   private static final List<BlockyDoor> BLOCKLIST = new ArrayList<>();

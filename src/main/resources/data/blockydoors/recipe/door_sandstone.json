@@ -6,12 +6,8 @@
     " ##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:sandstone"
-    },
-    "-": {
-      "tag": "minecraft:wooden_doors"
-    }
+    "#": "minecraft:sandstone",
+    "-": "#minecraft:wooden_doors"
   },
   "result": {
     "id": "blockydoors:door_sandstone",

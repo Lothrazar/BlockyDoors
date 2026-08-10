@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:red_sandstone"
-  },
+  "ingredient": "minecraft:red_sandstone",
   "result": {
     "id": "blockydoors:door_red_sandstone",
     "count": 1

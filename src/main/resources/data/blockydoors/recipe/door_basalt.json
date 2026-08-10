@@ -6,12 +6,8 @@
     " ##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:basalt"
-    },
-    "-": {
-      "tag": "minecraft:wooden_doors"
-    }
+    "#": "minecraft:basalt",
+    "-": "#minecraft:wooden_doors"
   },
   "result": {
     "id": "blockydoors:door_basalt",

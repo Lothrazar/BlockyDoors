@@ -6,12 +6,8 @@
     " ##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:obsidian"
-    },
-    "-": {
-      "tag": "minecraft:wooden_doors"
-    }
+    "#": "minecraft:obsidian",
+    "-": "#minecraft:wooden_doors"
   },
   "result": {
     "id": "blockydoors:door_obsidian",

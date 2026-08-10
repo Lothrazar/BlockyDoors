@@ -6,12 +6,8 @@
     " ##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:netherrack"
-    },
-    "-": {
-      "tag": "minecraft:wooden_doors"
-    }
+    "#": "minecraft:netherrack",
+    "-": "#minecraft:wooden_doors"
   },
   "result": {
     "id": "blockydoors:door_netherrack",

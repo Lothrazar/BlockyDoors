@@ -6,12 +6,8 @@
     " ##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:purpur_block"
-    },
-    "-": {
-      "tag": "minecraft:wooden_doors"
-    }
+    "#": "minecraft:purpur_block",
+    "-": "#minecraft:wooden_doors"
   },
   "result": {
     "id": "blockydoors:door_purpur",

@@ -6,12 +6,8 @@
     " ##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:prismarine_bricks"
-    },
-    "-": {
-      "tag": "minecraft:wooden_doors"
-    }
+    "#": "minecraft:prismarine_bricks",
+    "-": "#minecraft:wooden_doors"
   },
   "result": {
     "id": "blockydoors:door_prismarine_bricks",
